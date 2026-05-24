@@ -37,7 +37,7 @@ class MLP(nn.Module):
 
 We first start by looking at the training and validation loss for the model. They are converging very well with the validation loss slightly more than training loss. 
 
-![](../assets/lib/2026-05-17-deep-learning-mechanics/probe_4_loss_curves.png)
+![](../assets/img/post/2026-05-17-deep-learning-mechanics/probe_4_loss_curves.png)
 
 This looks like a normal training run right ? Now lets look at this from a few different perspectives and metrics. 
 
@@ -66,7 +66,7 @@ def probe_step_1_weight_norms(self):
 ```
 Below is the plot of the three layers of the MLP
 
-![The evolution of the Frobenius norms across the hidden layers of our MLP](../assets/lib/2026-05-17-deep-learning-mechanics/probe_1_weight_norms.png)
+![The evolution of the Frobenius norms across the hidden layers of our MLP](../assets/img/post/2026-05-17-deep-learning-mechanics/probe_1_weight_norms.png)
 
 In the plot we see that the layer closes to the output layer recieve large updates and those further away recieve smaller updates. You can clearly see the differential growth rates between the initial feature-extraction layers and the final classification layer. Over time, all 3 layers stabalize and further training does not change the magnitude of weights. 
 
@@ -112,7 +112,7 @@ def probe_step_2_ntk(self, xA, xB, xC):
     self.ntk_diff_class.append(k_AC)
 ```
 
-![NTK Alignment over time. The geometric distance in the parameter-gradient space demonstrates how the model learns to linearly separate intra-class representations from inter-class representations](../assets/lib/2026-05-17-deep-learning-mechanics/probe_2_ntk.png)
+![NTK Alignment over time. The geometric distance in the parameter-gradient space demonstrates how the model learns to linearly separate intra-class representations from inter-class representations](../assets/img/post/2026-05-17-deep-learning-mechanics/probe_2_ntk.png)
 
 We can see clearly in the plot that the NTK values for the same class samples stay above those of the different class samples indicating that the model is able to clearly differentiate between the two samples and update the weights accordingly. . 
 
@@ -167,7 +167,7 @@ The magnitude $||H v_k||_2$ rapidly converges to $\lambda_{max}$.
         return 
 ``` 
 
-![Trajectory of the dominant Hessian Eigenvalue ($\lambda_{max}$)](../assets/lib/2026-05-17-deep-learning-mechanics/probe_3_hessian.png) 
+![Trajectory of the dominant Hessian Eigenvalue ($\lambda_{max}$)](../assets/img/post/2026-05-17-deep-learning-mechanics/probe_3_hessian.png) 
 
 We can see in the plot that the eigen value climbs smoothely to about 260 and then stabalize around that number. This suggests that the model is able to land in a smooth region of the loss landscape and it is avoiding the jagged slopes and mountains. 
 
@@ -184,14 +184,6 @@ Training neural networks is far more complex than simple curve fitting. By imple
 Through these probes, we have seen the asymmetry of learning across various layers of the network. We also saw how the weight update affects various samples from different classes. Lastly we get to see how the model navigates the loss landscape and how it manages to settle into a good minimum.
 
 Thats all for this post, see you in the next one. Happy coding :)
-
-
-### References & Further Reading
-1. **Glorot, X., & Bengio, Y. (2010).** Understanding the difficulty of training deep feedforward neural networks. *AISTATS*.
-2. **Jacot, A., Gabriel, F., & Hongler, C. (2018).** Neural Tangent Kernel: Convergence and Generalization in Neural Networks. *NeurIPS*.
-3. **Mohamadi, M. A., Bae, W., & Sutherland, D. J. (2023).** A Fast, Well-Founded Approximation to the Empirical Neural Tangent Kernel. *ICML*.
-4. **Pearlmutter, B. A. (1994).** Fast exact multiplication by the Hessian. *Neural Computation*.
-5. **Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012).** ImageNet classification with deep convolutional neural networks. *NeurIPS*.
 
 
 ### References & Further Reading
