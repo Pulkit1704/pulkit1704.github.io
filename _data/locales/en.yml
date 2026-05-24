@@ -1,0 +1,10 @@
+copyright:
+  license:
+    template: "This article is licensed under the :LICENSE_NAME license by the author."
+    name: "CC BY-NC 4.0"
+    link: "https://creativecommons.org/licenses/by-nc/4.0/"
+  brief: "Some rights reserved."
+  verbose: >-
+    Except where otherwise noted, blog posts on this site are licensed under 
+    the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License 
+    by the author.
