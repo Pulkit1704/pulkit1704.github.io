@@ -6,8 +6,6 @@ date: 2025-05-24 00:00:00 +0530
 copyright: CC BY-NC 4.0
 ---
 
-# Peering into the Black Box: Various Perspectives to Neural Network training 
-
 The field of Deep learning tries to model highly complex and non-linear functions to represent data using large and complex neural networks. The field has grown rapidly in popularity in recent years because of the enormous success of various Large Language Models like OpenAI ChatGPT, Google Gemini, Anthropics Claude. The primary benefit of these large language models is their capability to identify and extract rich patterns from the underlying data. 
 
 However this also presents a problem. They are notoriously difficult to understand. They are famously called black boxes, because it is very difficult to see exactly what the network is learning as features and how is information moving through its various layers to arrive at a specific output. In this post, we will try to immplement a set of diagnostic functions to probe the learning mechanics of neural networks from various different perspectives. We will see how much does each layer of the network gets updated using Frobenious norms of their weight matrices, then we will see how the model moves through the parameter landscape to learn how to distinguish between different input samples. Lastly, We will try to visualize the model's motion through the loss landscape to stabalize into a final state. 
