@@ -2,7 +2,7 @@
 layout: post
 math: true
 title: "Peering into the Black Box: Various Perspectives to Neural Network training"
-date: 2025-05-24 00:00:00 +0530
+date: 2026-05-24 00:00:00 +0530
 copyright: CC BY-NC 4.0
 ---
 
